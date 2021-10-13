@@ -1,0 +1,6 @@
+---
+- hosts: ubuntu_vm
+  name: Install MySQL
+  become: yes
+  roles:
+    - role: geerlingguy.mysql
