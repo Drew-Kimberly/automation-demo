@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -e
+
 ansible-playbook() {
     docker run \
             -v "${PWD}":/work:ro \
