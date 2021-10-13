@@ -19,6 +19,7 @@ ansible-galaxy() {
 }
 
 deploy() {
+    terraform -chdir=terraform init
     terraform -chdir=terraform apply -var="namespace=$(whoami)"
     docker build -t ansible-ubuntu-20-04:latest -f Dockerfile.ansible .
     ansible-galaxy "install -r ansible/requirements.yml"

@@ -4,6 +4,7 @@
 - [Terraform (v1.0.x)](https://releases.hashicorp.com/terraform/1.0.2/)
 - [Docker](https://docs.docker.com/install/)
 - [DigitalOcean Account](https://cloud.digitalocean.com/)
+- [Azure Subscription w/ AAD Tenant](https://azure.microsoft.com/en-us/free)
 - [SSH Key Pair](https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key)
 
 
@@ -21,6 +22,7 @@ $ export TF_VAR_digitalocean_access_token={{ENTER_ACCESS_TOKEN_HERE}}
 # Example value: /Users/foo/.ssh/id_rsa.pub
 $ export TF_VAR_ssh_pub_key_path={{ABSOLUTE_PUB_KEY_PATH}}
 ```
+4. 
 
 ### Deploy Script
 After ensuring you have completed all prereqs, you can both provision and configure infrastructure with a single script by running:
@@ -38,12 +40,16 @@ _NOTE - this will default to use `$(whoami)` as your infrastructure namespace!_
 
 ### Provisioning Infrastructure
 
-1. View the infrastructure provisioning plan output by Terraform:
+1. Initialize the Terraform config:
+```bash
+$ terraform -chdir=terraform init
+```
+2. View the infrastructure provisioning plan output by Terraform:
 ```bash
 # Note that we use evaluation of $(whoami) here as the namespace. This can be any arbitrary string value, i.e. "foo".
 $ terraform -chdir=terraform plan -var="namespace=$(whoami)"
 ```
-2. Provision our infrastructure with Terraform:
+3. Provision our infrastructure with Terraform:
 ```bash
 # Note that we use evaluation of $(whoami) here as the namespace. This can be any arbitrary string value, i.e. "foo".
 $ terraform -chdir=terraform apply -var="namespace=$(whoami)"

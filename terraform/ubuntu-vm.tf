@@ -1,7 +1,3 @@
-locals {
-  namespace = lower(var.namespace)
-}
-
 resource "digitalocean_ssh_key" "ssh_key" {
   name       = format("%s SSH Key", local.namespace)
   public_key = file(var.ssh_pub_key_path)
