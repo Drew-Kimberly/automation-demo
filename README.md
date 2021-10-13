@@ -2,6 +2,7 @@
 
 ## Requirements
 - [Terraform (v1.0.x)](https://releases.hashicorp.com/terraform/1.0.2/)
+- [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 - [Docker](https://docs.docker.com/install/)
 - [DigitalOcean Account](https://cloud.digitalocean.com/)
 - [Azure Subscription w/ AAD Tenant](https://azure.microsoft.com/en-us/free)
@@ -22,7 +23,14 @@ $ export TF_VAR_digitalocean_access_token={{ENTER_ACCESS_TOKEN_HERE}}
 # Example value: /Users/foo/.ssh/id_rsa.pub
 $ export TF_VAR_ssh_pub_key_path={{ABSOLUTE_PUB_KEY_PATH}}
 ```
-4. 
+4. Sign in to your Azure account via the Azure CLI:
+```bash
+$ az login
+```
+5. Using either Azure CLI or Azure Portal, retrieve your Azure Subscription ID and then run the following:
+```bash
+$ export ARM_SUBSCRIPTION_ID={{AZURE_SUBSCRIPTION_ID}}
+```
 
 ### Deploy Script
 After ensuring you have completed all prereqs, you can both provision and configure infrastructure with a single script by running:
@@ -54,7 +62,6 @@ $ terraform -chdir=terraform plan -var="namespace=$(whoami)"
 # Note that we use evaluation of $(whoami) here as the namespace. This can be any arbitrary string value, i.e. "foo".
 $ terraform -chdir=terraform apply -var="namespace=$(whoami)"
 ```
-
 
 ### Configuring the Ubuntu VM
 
