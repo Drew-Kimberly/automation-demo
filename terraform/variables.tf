@@ -8,7 +8,7 @@ variable "ssh_pub_key_path" {
   type        = string
 }
 
-variable "digitalocean_access_token" {
-  description = "Access token for managing resources in DigitalOcean"
+variable "aad_domain_name" {
+  description = "The domain of the AAD tenant used to create the AAD Domain Services"
   type        = string
 }

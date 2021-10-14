@@ -2,4 +2,4 @@
 
 # This template is interpolated during Terraform provisioning to produce a dynamic Ansible hosts inventory.
 [ubuntu_vm]
-${ubuntu_vm_ip}
+${ubuntu_vm_ip} ansible_user=${admin_user}

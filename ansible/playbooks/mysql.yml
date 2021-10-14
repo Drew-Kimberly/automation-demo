@@ -3,4 +3,6 @@
   name: Install MySQL
   become: yes
   roles:
-    - role: geerlingguy.mysql
+      - role: geerlingguy.mysql
+  vars_files:
+      - ../vars/mysql-vars.yml

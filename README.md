@@ -31,6 +31,11 @@ $ az login
 ```bash
 $ export ARM_SUBSCRIPTION_ID={{AZURE_SUBSCRIPTION_ID}}
 ```
+6. In your terminal, export an environment variable set to your AAD tenant domain name:
+```bash
+# Example value: foo.onmicrosoft.com
+$ export TF_VAR_aad_domain_name={{AAD_DOMAIN}}
+```
 
 ### Deploy Script
 After ensuring you have completed all prereqs, you can both provision and configure infrastructure with a single script by running:

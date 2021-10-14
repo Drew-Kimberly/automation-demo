@@ -1,6 +1,7 @@
 ---
 - hosts: ubuntu_vm
   name: Install Vim
+  become: yes
   tasks:
       - name: vim install
         apt: name=vim state=present
