@@ -4,7 +4,6 @@
 - [Terraform (v1.0.x)](https://releases.hashicorp.com/terraform/1.0.2/)
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 - [Docker](https://docs.docker.com/install/)
-- [DigitalOcean Account](https://cloud.digitalocean.com/)
 - [Azure Subscription w/ AAD Tenant](https://azure.microsoft.com/en-us/free)
 - [SSH Key Pair](https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key)
 
