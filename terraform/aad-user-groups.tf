@@ -17,3 +17,8 @@ resource "azuread_user" "berito" {
   given_name          = "Ofelia"
   surname             = "Berit"
 }
+
+output "berito_pw" {
+  value     = random_password.berito_pw.result
+  sensitive = true
+}
