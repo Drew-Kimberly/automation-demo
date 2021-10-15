@@ -12,25 +12,20 @@
 
 ### Prerequisites
 
-1. Retrieve an Access Token with both Read and Write scopes for your DigitalOcean account, ([docs](https://docs.digitalocean.com/reference/api/create-personal-access-token/)).
-2. In your terminal, run (assuming OSx or Linux):
-```bash
-$ export TF_VAR_digitalocean_access_token={{ENTER_ACCESS_TOKEN_HERE}}
-```
-3. In your terminal, export an environment variable set to the absolute path to the SSH public key on your machine:
+1. In your terminal, export an environment variable set to the absolute path to the SSH public key on your machine:
 ```bash
 # Example value: /Users/foo/.ssh/id_rsa.pub
 $ export TF_VAR_ssh_pub_key_path={{ABSOLUTE_PUB_KEY_PATH}}
 ```
-4. Sign in to your Azure account via the Azure CLI:
+2. Sign in to your Azure account via the Azure CLI:
 ```bash
 $ az login
 ```
-5. Using either Azure CLI or Azure Portal, retrieve your Azure Subscription ID and then run the following:
+3. Using either Azure CLI or Azure Portal, retrieve your Azure Subscription ID and then run the following:
 ```bash
 $ export ARM_SUBSCRIPTION_ID={{AZURE_SUBSCRIPTION_ID}}
 ```
-6. In your terminal, export an environment variable set to your AAD tenant domain name:
+4. In your terminal, export an environment variable set to your AAD tenant domain name:
 ```bash
 # Example value: foo.onmicrosoft.com
 $ export TF_VAR_aad_domain_name={{AAD_DOMAIN}}
